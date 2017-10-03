@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="value_size">24sp</dimen>
+    <dimen name="control_value">12sp</dimen>
+    <dimen name="text_button_value">20sp</dimen>
+    <dimen name="pd_5px">8dp</dimen>
+</resources>

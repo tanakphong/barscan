@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">barscan</string>
+    <string name="turn_on_flashlight">Turn on Flashlight</string>
+    <string name="turn_off_flashlight">Turn off Flashlight</string>
+    <string name="title_activity_main">BarcodeScan With Flash</string>
+    <string name="my_ad_unit">ca-app-pub-3971225854562108/6976258852</string>
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>-->
+    <string name="banner_ad_unit_id">ca-app-pub-3971225854562108/5590847389</string>
+    <string name="scan_barcode">SCAN BARCODE</string>
+    <string name="search_by_google">Search by google</string>
+    <string name="copy_to_clipboard">Copy to clipboard</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="scan_help">Place the bar code inside the viewfinder to scan.</string>
+    <string name="go_to">Go to website</string>
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3971225854562108/5590847389</string>-->
+</resources>

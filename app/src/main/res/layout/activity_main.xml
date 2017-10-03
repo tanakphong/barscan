@@ -1,0 +1,117 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/colorPrimaryText"
+    xmlns:ads="http://schemas.android.com/apk/res-auto">
+
+    <!--<android.support.v7.widget.Toolbar-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--custom:theme="@style/MyActionBar"/>-->
+
+    <!--<com.google.android.gms.ads.NativeExpressAdView-->
+        <!--android:id="@+id/adView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--ads:adSize="320x100"-->
+        <!--ads:adUnitId="ca-app-pub-3971225854562108/5590847389"/>-->
+
+    <!--<com.google.android.gms.ads.AdView-->
+        <!--android:id="@+id/adView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--ads:adUnitId="ca-app-pub-3971225854562108/5590847389"-->
+        <!--ads:adSize="SMART_BANNER" />-->
+
+    <!--<com.google.android.gms.ads.AdView-->
+        <!--xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/adView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--ads:adSize="BANNER"-->
+        <!--ads:adUnitId="ca-app-pub-3971225854562108/5590847389"/>-->
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id" />
+
+
+    <TextView
+        android:id="@+id/txtValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:textSize="@dimen/value_size"
+        android:padding="@dimen/pd_5px"
+        android:text="@string/title_activity_main"
+        android:textColor="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:id="@+id/layControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/txtValue"
+        android:orientation="horizontal"
+        tools:ignore="RtlHardcoded">
+
+        <Button
+            android:id="@+id/btnCopyToClipboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/copy_to_clipboard"
+            android:text="@string/copy_to_clipboard"
+            android:textSize="@dimen/control_value"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btnLinkto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/external_link"
+            android:text="@string/search_by_google"
+            android:textSize="@dimen/control_value"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btnGoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/circled_right"
+            android:text="@string/go_to"
+            android:textSize="@dimen/control_value"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:drawableStart="@drawable/barcode_scanner"
+        android:background="@color/colorPrimary"
+        android:text="@string/scan_barcode"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="@dimen/text_button_value"/>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">barscan</string>
+    <string name="turn_on_flashlight">เปิดแฟลช</string>
+    <string name="turn_off_flashlight">ปิดแฟลช</string>
+    <string name="title_activity_main">BarcodeScan With Flash</string>
+    <string name="my_ad_unit">ca-app-pub-3971225854562108/6976258852</string>
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>-->
+    <string name="banner_ad_unit_id">ca-app-pub-3971225854562108/5590847389</string>
+    <string name="scan_barcode">สแกนบาร์โค๊ด</string>
+    <string name="search_by_google">ค้นหาด้วยกูเกิล</string>
+    <string name="copy_to_clipboard">คัดลอกไปคลิปบอร์ด</string>
+    <string name="cancelled">ยกเลิกแล้ว</string>
+    <string name="scan_help">วางบาร์โค้ดไว้ในช่องมองภาพเพื่อสแกน</string>
+    <string name="go_to">ไปที่</string>
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3971225854562108/5590847389</string>-->
+</resources>
