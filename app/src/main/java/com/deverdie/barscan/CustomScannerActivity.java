@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +11,6 @@ import android.widget.ImageView;
 
 import com.journeyapps.barcodescanner.CaptureManager;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
-import com.journeyapps.barcodescanner.Size;
 
 /**
  * Custom Scannner Activity extending from Activity to display a custom layout form scanner view.
@@ -35,7 +33,6 @@ public class CustomScannerActivity extends Activity implements
 
         if (savedInstanceState != null) {
             isPortrait = savedInstanceState.getBoolean(IS_PORTRAIT);
-            Log.i(TAG, "savedInstanceState IS_PORTRAIT: "+isPortrait);
         }
 
         barcodeScannerView =  findViewById(R.id.zxing_barcode_scanner);
@@ -45,15 +42,10 @@ public class CustomScannerActivity extends Activity implements
         mImgFlash.setImageResource(R.drawable.flash_on);
         mImgFlash.setTag("on");
 
-        Log.i(TAG, "onCreate: "+isPortrait);
         mBtnChangeOrientation = findViewById(R.id.change_orientation);
         if (isPortrait) {
-            barcodeScannerView.getBarcodeView().setFramingRectSize(new Size(400, 100));
-            mBtnChangeOrientation.setTag("landscape");
             mBtnChangeOrientation.setText(getResources().getString(R.string.landscape));
         }else{
-            barcodeScannerView.getBarcodeView().setFramingRectSize(new Size(300, 300));
-            mBtnChangeOrientation.setTag("portrait");
             mBtnChangeOrientation.setText(getResources().getString(R.string.portrait));
         }
 
@@ -108,10 +100,18 @@ public class CustomScannerActivity extends Activity implements
     }
 
     @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+//        isPortrait = savedInstanceState.getBoolean("IS_PORTRAIT");
+//        Log.i(TAG, "onRestoreInstanceState: "+isPortrait);
+    }
+
+    @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         capture.onSaveInstanceState(outState);
         outState.putBoolean(IS_PORTRAIT, isPortrait);
+//        Log.i(TAG, "onSaveInstanceState: "+isPortrait);
     }
 
     @Override

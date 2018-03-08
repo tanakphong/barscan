@@ -33,19 +33,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MobileAds.initialize(this, "ca-app-pub-3971225854562108~9382930342");
-        mAdView =  findViewById(R.id.ad_view);
+        mAdView = findViewById(R.id.ad_view);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
 
-        mTxtValue =  findViewById(R.id.txtValue);
-        mBtnScan =  findViewById(R.id.imgScan);
-        mLayControl =  findViewById(R.id.layControl);
+        mTxtValue = findViewById(R.id.txtValue);
+        mBtnScan = findViewById(R.id.imgScan);
+        mLayControl = findViewById(R.id.layControl);
         mLayControl.setVisibility(View.GONE);
-        mBtnCopyToClipboard =  findViewById(R.id.btnCopyToClipboard);
-        mBtnLinkTo =  findViewById(R.id.btnLinkto);
-        mBtnGoTo =  findViewById(R.id.btnGoto);
+        mBtnCopyToClipboard = findViewById(R.id.btnCopyToClipboard);
+        mBtnLinkTo = findViewById(R.id.btnLinkto);
+        mBtnGoTo = findViewById(R.id.btnGoto);
 
         mBtnCopyToClipboard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", val);
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(MainActivity.this, "`" + val + "` "+getResources().getString(R.string.copy_to_clipboard), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "`" + val + "` " + getResources().getString(R.string.copy_to_clipboard), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -72,12 +72,15 @@ public class MainActivity extends AppCompatActivity {
         mBtnGoTo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try{
+                try {
                     String val = mTxtValue.getText().toString();
+                    if (!val.startsWith("http://") && !val.startsWith("https://")) {
+                        val = "http://" + val;
+                    }
                     Uri uri = Uri.parse(val);
                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                     startActivity(intent);
-                }catch (Exception e){
+                } catch (Exception e) {
                     Toast.makeText(MainActivity.this, getResources().getString(R.string.format_invalid), Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
@@ -128,15 +131,17 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         mTxtValue.setText(savedInstanceState.getString("mTxtValue"));
         int visibilityStage = savedInstanceState.getInt("mLayControl");
-        if (visibilityStage==0){
+        if (visibilityStage == 0) {
             mLayControl.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             mLayControl.setVisibility(View.GONE);
         }
     }
 
 
-    /** Called when leaving the activity */
+    /**
+     * Called when leaving the activity
+     */
     @Override
     public void onPause() {
         if (mAdView != null) {
@@ -145,7 +150,9 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
     }
 
-    /** Called when returning to the activity */
+    /**
+     * Called when returning to the activity
+     */
     @Override
     public void onResume() {
         super.onResume();
@@ -154,7 +161,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /** Called before the activity is destroyed */
+    /**
+     * Called before the activity is destroyed
+     */
     @Override
     public void onDestroy() {
         if (mAdView != null) {

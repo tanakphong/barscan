@@ -27,7 +27,6 @@
 
         </activity>
         <activity android:name=".CustomScannerActivity"
-            android:configChanges="orientation"
             android:screenOrientation="portrait" />
 
         <!--Include the AdActivity configChanges and theme. -->
