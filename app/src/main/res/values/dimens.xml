@@ -3,4 +3,8 @@
     <dimen name="control_value">12sp</dimen>
     <dimen name="text_button_value">20sp</dimen>
     <dimen name="pd_5px">8dp</dimen>
+    <dimen name="view_1d_width">400</dimen>
+    <dimen name="view_1d_height">100</dimen>
+    <dimen name="view_2d_width">400</dimen>
+    <dimen name="pd_20">20dp</dimen>
 </resources>

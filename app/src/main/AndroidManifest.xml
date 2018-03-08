@@ -17,7 +17,8 @@
         <!--This meta-data tag is required to use Google Play Services.-->
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,11 +28,7 @@
         </activity>
         <activity android:name=".CustomScannerActivity"
             android:configChanges="orientation"
-            android:screenOrientation="landscape" />
-
-        <!--<activity-->
-            <!--android:name="com.google.android.gms.ads.AdActivity"-->
-            <!--android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />-->
+            android:screenOrientation="portrait" />
 
         <!--Include the AdActivity configChanges and theme. -->
         <activity android:name="com.google.android.gms.ads.AdActivity"

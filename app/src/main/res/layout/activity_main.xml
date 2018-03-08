@@ -1,49 +1,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/colorPrimaryText"
-    xmlns:ads="http://schemas.android.com/apk/res-auto">
-
-    <!--<android.support.v7.widget.Toolbar-->
-        <!--android:id="@+id/toolbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--custom:theme="@style/MyActionBar"/>-->
-
-    <!--<com.google.android.gms.ads.NativeExpressAdView-->
-        <!--android:id="@+id/adView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--ads:adSize="320x100"-->
-        <!--ads:adUnitId="ca-app-pub-3971225854562108/5590847389"/>-->
-
-    <!--<com.google.android.gms.ads.AdView-->
-        <!--android:id="@+id/adView"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--ads:adUnitId="ca-app-pub-3971225854562108/5590847389"-->
-        <!--ads:adSize="SMART_BANNER" />-->
-
-    <!--<com.google.android.gms.ads.AdView-->
-        <!--xmlns:ads="http://schemas.android.com/apk/res-auto"-->
-        <!--android:id="@+id/adView"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--ads:adSize="BANNER"-->
-        <!--ads:adUnitId="ca-app-pub-3971225854562108/5590847389"/>-->
+    android:background="@color/colorPrimaryText">
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/ad_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id" />
 
@@ -55,10 +22,10 @@
         android:layout_centerInParent="true"
         android:layout_gravity="center_vertical"
         android:gravity="center"
-        android:textSize="@dimen/value_size"
         android:padding="@dimen/pd_5px"
         android:text="@string/title_activity_main"
-        android:textColor="@color/colorPrimary"/>
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/value_size" />
 
     <LinearLayout
         android:id="@+id/layControl"
@@ -100,18 +67,15 @@
             tools:ignore="ButtonStyle" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnScan"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+
+    <ImageView
+        android:id="@+id/imgScan"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:drawableStart="@drawable/barcode_scanner"
-        android:background="@color/colorPrimary"
-        android:text="@string/scan_barcode"
-        android:textColor="@color/colorPrimaryText"
-        android:textSize="@dimen/text_button_value"/>
-
-
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp"
+        android:src="@mipmap/ic_barcode_button" />
 
 
 </RelativeLayout>

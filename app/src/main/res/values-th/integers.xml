@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="view_1d_width">400</integer>
+    <integer name="view_1d_height">100</integer>
+    <integer name="view_2d_width">400</integer>
+</resources>
