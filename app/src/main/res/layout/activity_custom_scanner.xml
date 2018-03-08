@@ -13,16 +13,6 @@
         app:zxing_scanner_layout="@layout/custom_barcode_scanner"/>
 
     <ImageView
-        android:id="@+id/img1D"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="@dimen/pd_5px"
-        android:tag="1d"
-        android:src="@drawable/flash_on"/>
-
-    <ImageView
         android:id="@+id/imgFlash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
